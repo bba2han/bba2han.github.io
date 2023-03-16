@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue.js Blog</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+	<div id="app">
+		<h1>{{ title }}</h1>
+		<ul>
+			<li v-for="post in posts">
+				{{ post.title }}
+			</li>
+		</ul>
+	</div>
+	
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				title: 'My Blog',
+				posts: [
+					{ title: 'First Post' },
+					{ title: 'Second Post' },
+					{ title: 'Third Post' }
+				]
+			}
+		})
+	</script>
+<div id="app" class="container">
+  <h1 class="card-title">{{ title }}</h1>
+  <div v-for="post in posts" class="card">
+    <div class="card-content">
+      <span class="card-title">{{ post.title }}</span>
+      <p>{{ post.body }}</p>
+    </div>
+  </div>
+</div>
+</body>
+<style>
+	body {
+		background-color: #f1f1f1;
+	}
+
+	.container {
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
+	.card {
+		box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+	}
+
+	.card-content {
+		padding: 24px;
+	}
+
+	.card-title {
+		font-size: 24px;
+		font-weight: 500;
+		margin-bottom: 24px;
+	}
+</style>
+</html>
